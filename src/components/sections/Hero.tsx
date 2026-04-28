@@ -77,9 +77,7 @@ export default function Hero() {
               className="text-[17px] leading-[1.85] mb-10"
               style={{ color: '#574d3f', maxWidth: '500px' }}
             >
-              Financial stress isn&apos;t solved by a bigger number in your account — it&apos;s
-              solved by clarity. I&apos;m a fee-only financial advisor and the founder of Sparrows
-              Financial.
+              I am on a mission to help you have peace and clarity with your money. Financial stress isn&apos;t healed by a bigger number in your account — so let&apos;s walk through what the remedy is together.
             </p>
           </FadeUp>
 
