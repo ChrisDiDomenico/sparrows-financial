@@ -1,7 +1,6 @@
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Hero from '@/components/sections/Hero';
-import Quotes from '@/components/sections/Quotes';
 import Philosophy from '@/components/sections/Philosophy';
 import EmotionalStatement from '@/components/sections/EmotionalStatement';
 import Process from '@/components/sections/Process';
@@ -17,8 +16,7 @@ export default function HomePage() {
       <Navbar />
       <main>
         <Hero />
-        <Quotes />
-        <Philosophy />
+<Philosophy />
         <EmotionalStatement />
         <Process />
         <MeetChris />
