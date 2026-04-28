@@ -58,16 +58,7 @@ export default function Hero() {
             >
               <span className="block whitespace-nowrap">Hey, I&apos;m Chris. 👋</span>
               <span className="block mt-1">
-                I help you find{' '}
-                <em
-                  style={{
-                    fontFamily: 'var(--font-playfair)',
-                    color: '#c4715a',
-                    fontStyle: 'italic',
-                  }}
-                >
-                  clarity.
-                </em>
+                I am on a mission to help you have peace and clarity with your money.
               </span>
             </h1>
           </FadeUp>
@@ -77,7 +68,7 @@ export default function Hero() {
               className="text-[17px] leading-[1.85] mb-10"
               style={{ color: '#574d3f', maxWidth: '500px' }}
             >
-              I am on a mission to help you have peace and clarity with your money. Financial stress isn&apos;t healed by a bigger number in your account — so let&apos;s walk through what the remedy is together.
+              Financial stress isn&apos;t healed by a bigger number in your account — so let&apos;s walk through what the remedy is together.
             </p>
           </FadeUp>
 
