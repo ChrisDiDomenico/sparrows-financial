@@ -49,18 +49,28 @@ export default function Hero() {
 
           <FadeUp delay={0.12}>
             <h1
-              className="font-black leading-[1.0] mb-6"
+              className="font-black leading-[1.0] mb-4 whitespace-nowrap"
               style={{
-                fontSize: 'clamp(52px, 7vw, 88px)',
+                fontSize: '80px',
                 color: '#36302a',
                 fontFamily: 'var(--font-inter)',
               }}
             >
-              <span className="block whitespace-nowrap">Hey, I&apos;m Chris. 👋</span>
-              <span className="block mt-1">
-                I am on a mission to help you have peace and clarity with your money.
-              </span>
+              Hey, I&apos;m Chris. 👋
             </h1>
+            <p
+              className="mb-6"
+              style={{
+                fontFamily: 'var(--font-inter)',
+                fontWeight: 700,
+                fontSize: '32px',
+                lineHeight: 1.4,
+                color: '#574d3f',
+                maxWidth: '500px',
+              }}
+            >
+              I am on a mission to help you have peace and clarity with your money.
+            </p>
           </FadeUp>
 
           <FadeUp delay={0.24}>
