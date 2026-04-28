@@ -64,7 +64,7 @@ export default function Footer() {
                     className="flex-1 px-4 py-2.5 rounded-full text-[14px] outline-none focus:ring-2 focus:ring-[#c4715a]/40"
                     style={{
                       background: 'rgba(240,232,219,0.12)',
-                      color: '#f0e8db',
+                      color: '#b9a591',
                       border: '1px solid rgba(185,165,145,0.3)',
                     }}
                   />

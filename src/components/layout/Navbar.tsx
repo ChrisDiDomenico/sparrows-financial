@@ -11,7 +11,7 @@ const SparrowIcon = () => (
       d="M12 3C10.5 3 9 3.8 8 5C7.2 5.8 6.8 7 7 8.5C5.5 8.8 4 9.8 3 11.5C2.2 12.8 2 14.5 2.5 16C3 17.5 4 18.8 5.5 19.5C5 20 4.5 20.5 4 21H7C8 21 9 20.5 10 20C10.5 20.8 11.2 21.5 12 21.8C12.8 21.5 13.5 20.8 14 20C15 20.5 16 21 17 21H20C19.5 20.5 19 20 18.5 19.5C20 18.8 21 17.5 21.5 16C22 14.5 21.8 12.8 21 11.5C20 9.8 18.5 8.8 17 8.5C17.2 7 16.8 5.8 16 5C15 3.8 13.5 3 12 3Z"
       fill="currentColor"
     />
-    <circle cx="9.5" cy="7.5" r="1" fill="#f0e8db" />
+    <circle cx="9.5" cy="7.5" r="1" fill="#b9a591" />
   </svg>
 );
 
@@ -271,7 +271,7 @@ export default function Navbar() {
             exit={{ opacity: 0, x: '100%' }}
             transition={{ duration: 0.28, ease: [0.4, 0, 0.2, 1] }}
             className="fixed inset-0 z-30 flex flex-col pt-20 px-8 pb-12 overflow-y-auto"
-            style={{ background: '#f0e8db' }}
+            style={{ background: '#b9a591' }}
           >
             <nav className="flex flex-col gap-6 text-[28px] font-bold" style={{ color: '#36302a' }}>
               <Link href="/about" onClick={() => setMobileOpen(false)}>Our Story</Link>

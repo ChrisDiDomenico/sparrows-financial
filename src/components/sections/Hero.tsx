@@ -33,7 +33,7 @@ export default function Hero() {
   return (
     <section
       className="relative overflow-hidden"
-      style={{ minHeight: '100vh', background: '#f0e8db' }}
+      style={{ minHeight: '100vh', background: '#b9a591' }}
     >
       <div className="max-w-[1200px] mx-auto px-6 flex items-center" style={{ minHeight: '100vh' }}>
         {/* Left content */}

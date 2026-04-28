@@ -92,7 +92,7 @@ export default function Process() {
                     style={{
                       border: '2px solid #c4715a',
                       color: '#c4715a',
-                      background: '#f0e8db',
+                      background: '#b9a591',
                     }}
                   >
                     {step.number}
