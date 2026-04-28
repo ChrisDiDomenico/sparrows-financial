@@ -5,14 +5,14 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { SCHEDULE_URL } from '@/lib/constants';
 
-export default function EmotionalStatement() {
+export default function EmotionalStatement({ dark }: { dark?: boolean }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section className="pb-40">
-      <div style={{ borderTop: '1px solid #ddd0bc' }} />
-      <div className="max-w-[720px] mx-auto px-6 pt-24 text-center" ref={ref}>
+    <section className="pb-20">
+      {!dark && <div style={{ borderTop: '1px solid #ddd0bc' }} />}
+      <div className="max-w-[720px] mx-auto px-6 pt-16 text-center" ref={ref}>
         <motion.h2
           initial={{ opacity: 0, y: 32 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -20,7 +20,7 @@ export default function EmotionalStatement() {
           className="font-black leading-[1.05] mb-8"
           style={{
             fontSize: 'clamp(40px, 5vw, 68px)',
-            color: '#36302a',
+            color: dark ? '#ffffff' : '#36302a',
             fontFamily: 'var(--font-inter)',
           }}
         >
@@ -32,7 +32,7 @@ export default function EmotionalStatement() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="text-[18px] leading-[1.9] mb-12"
-          style={{ color: '#574d3f' }}
+          style={{ color: dark ? 'rgba(255,255,255,0.88)' : '#574d3f' }}
         >
           It isn&apos;t enough to provide an excellent financial plan. We want you to have total
           confidence in how it&apos;s delivered. Complete transparency. Real conversations. No sales
@@ -46,10 +46,10 @@ export default function EmotionalStatement() {
         >
           <Link
             href={SCHEDULE_URL}
-            className="inline-block px-10 py-4 rounded-full text-[15px] font-semibold transition-all hover:bg-[#c4715a] hover:text-white active:scale-95"
+            className="inline-block px-10 py-4 rounded-full text-[15px] font-semibold transition-all active:scale-95"
             style={{
-              border: '2px solid #c4715a',
-              color: '#c4715a',
+              border: `2px solid ${dark ? 'rgba(255,255,255,0.8)' : '#c4715a'}`,
+              color: dark ? '#ffffff' : '#c4715a',
             }}
           >
             See if you&apos;re a fit

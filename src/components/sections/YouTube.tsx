@@ -9,14 +9,18 @@ const videos = [
   { title: 'Roth vs Traditional IRA: Which Is Right For You?' },
 ];
 
-export default function YouTube() {
+export default function YouTube({ dark }: { dark?: boolean }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
+  const headlineColor = dark ? '#ffffff' : '#36302a';
+  const bodyColor = dark ? 'rgba(255,255,255,0.82)' : '#574d3f';
+  const linkColor = dark ? 'rgba(255,255,255,0.9)' : '#c4715a';
+
   return (
-    <section className="pb-40">
-      <div style={{ borderTop: '1px solid #ddd0bc' }} />
-      <div className="max-w-[1200px] mx-auto px-6 pt-24" ref={ref}>
+    <section className="pb-20">
+      {!dark && <div style={{ borderTop: '1px solid #ddd0bc' }} />}
+      <div className="max-w-[1200px] mx-auto px-6 pt-16" ref={ref}>
         <div className="flex flex-col md:flex-row gap-20">
           {/* Left */}
           <motion.div
@@ -35,13 +39,13 @@ export default function YouTube() {
               className="font-black leading-[1.05] mb-8"
               style={{
                 fontSize: 'clamp(36px, 4.5vw, 60px)',
-                color: '#36302a',
+                color: headlineColor,
                 fontFamily: 'var(--font-inter)',
               }}
             >
               Learn from my weekly videos.
             </h2>
-            <p className="text-[17px] leading-[1.9] mb-8" style={{ color: '#574d3f' }}>
+            <p className="text-[17px] leading-[1.9] mb-8" style={{ color: bodyColor }}>
               Every week I publish a new video breaking down real financial planning concepts in
               plain English. No jargon. No sales. Just honest education you can actually use.
             </p>
@@ -50,7 +54,7 @@ export default function YouTube() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-[15px] font-medium hover:opacity-70 transition-opacity"
-              style={{ color: '#c4715a' }}
+              style={{ color: linkColor }}
             >
               Subscribe on YouTube →
             </a>
@@ -72,7 +76,6 @@ export default function YouTube() {
                 className="block rounded-xl overflow-hidden group transition-transform hover:-translate-y-1"
                 style={{ background: '#36302a' }}
               >
-                {/* Thumbnail */}
                 <div
                   className="w-full"
                   style={{
@@ -83,18 +86,11 @@ export default function YouTube() {
                     justifyContent: 'center',
                   }}
                 >
-                  {/* Play button */}
                   <div
                     className="w-14 h-14 rounded-full flex items-center justify-center transition-transform group-hover:scale-110"
                     style={{ background: 'rgba(255,255,255,0.2)', backdropFilter: 'blur(8px)' }}
                   >
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="white"
-                      className="ml-1"
-                    >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white" className="ml-1">
                       <path d="M8 5v14l11-7z" />
                     </svg>
                   </div>

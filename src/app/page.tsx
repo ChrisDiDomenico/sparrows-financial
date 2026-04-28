@@ -16,14 +16,43 @@ export default function HomePage() {
       <Navbar />
       <main>
         <Hero />
-<Philosophy />
-        <EmotionalStatement />
-        <Process />
-        <MeetChris />
-        <FAQ />
-        <YouTube />
-        <SparrowsProgram />
-        <FinalCTA />
+
+        <div
+          className="flex flex-col px-6 pb-24"
+          style={{ gap: '48px', paddingTop: '48px', background: '#b9a591' }}
+        >
+          <div className="rounded-3xl overflow-hidden" style={{ background: '#ede4da' }}>
+            <Philosophy />
+          </div>
+
+          <div className="rounded-3xl overflow-hidden" style={{ background: '#7e9e6b' }}>
+            <EmotionalStatement dark />
+          </div>
+
+          <div className="rounded-3xl overflow-hidden" style={{ background: '#36302a' }}>
+            <Process dark />
+          </div>
+
+          <div className="rounded-3xl overflow-hidden" style={{ background: '#ede4da' }}>
+            <MeetChris />
+          </div>
+
+          <div className="rounded-3xl overflow-hidden" style={{ background: '#f7f3ec' }}>
+            <FAQ />
+          </div>
+
+          <div className="rounded-3xl overflow-hidden" style={{ background: '#574d3f' }}>
+            <YouTube dark />
+          </div>
+
+          <div className="rounded-3xl overflow-hidden" style={{ background: '#4a6741' }}>
+            <SparrowsProgram />
+          </div>
+
+          <div className="rounded-3xl overflow-hidden" style={{ background: '#c4715a' }}>
+            <FinalCTA />
+          </div>
+        </div>
       </main>
       <Footer />
     </>

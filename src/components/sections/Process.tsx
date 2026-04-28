@@ -10,13 +10,13 @@ const steps = [
     number: '1',
     title: 'Start a Conversation',
     description:
-      'Schedule a free 30-minute discovery call. We get to know you, understand your goals, and see if we\'re a good fit. No pressure. No sales pitch.',
+      "Schedule a free 30-minute discovery call. We get to know you, understand your goals, and see if we're a good fit. No pressure. No sales pitch.",
   },
   {
     number: '2',
     title: 'Build Your Plan',
     description:
-      'We craft a comprehensive financial plan built entirely around your life — your goals, values, and timeline. Not a template. Yours.',
+      "We craft a comprehensive financial plan built entirely around your life — your goals, values, and timeline. Not a template. Yours.",
   },
   {
     number: '3',
@@ -26,14 +26,19 @@ const steps = [
   },
 ];
 
-export default function Process() {
+export default function Process({ dark }: { dark?: boolean }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
+  const headlineColor = dark ? '#ffffff' : '#36302a';
+  const bodyColor = dark ? 'rgba(255,255,255,0.78)' : '#574d3f';
+  const lineColor = dark ? 'rgba(255,255,255,0.15)' : '#ddd0bc';
+  const circleBg = dark ? 'transparent' : '#b9a591';
+
   return (
-    <section className="pb-40">
-      <div style={{ borderTop: '1px solid #ddd0bc' }} />
-      <div className="max-w-[1200px] mx-auto px-6 pt-24" ref={ref}>
+    <section className="pb-20">
+      {!dark && <div style={{ borderTop: '1px solid #ddd0bc' }} />}
+      <div className="max-w-[1200px] mx-auto px-6 pt-16" ref={ref}>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -51,7 +56,7 @@ export default function Process() {
           className="font-black leading-[1.05] mb-6"
           style={{
             fontSize: 'clamp(40px, 5vw, 68px)',
-            color: '#36302a',
+            color: headlineColor,
             fontFamily: 'var(--font-inter)',
             maxWidth: '680px',
           }}
@@ -64,17 +69,15 @@ export default function Process() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.16 }}
           className="text-[18px] leading-[1.8] mb-20"
-          style={{ color: '#574d3f', maxWidth: '520px' }}
+          style={{ color: bodyColor, maxWidth: '520px' }}
         >
           Here&apos;s what to expect.
         </motion.p>
 
-        {/* Steps */}
         <div className="relative">
-          {/* Connecting line */}
           <div
             className="absolute left-[19px] top-8 bottom-16 w-px hidden md:block"
-            style={{ background: '#ddd0bc' }}
+            style={{ background: lineColor }}
           />
 
           <div className="flex flex-col gap-16">
@@ -92,7 +95,7 @@ export default function Process() {
                     style={{
                       border: '2px solid #c4715a',
                       color: '#c4715a',
-                      background: '#b9a591',
+                      background: circleBg,
                     }}
                   >
                     {step.number}
@@ -101,11 +104,11 @@ export default function Process() {
                 <div className="pb-2">
                   <h3
                     className="font-semibold text-[22px] mb-3"
-                    style={{ color: '#36302a' }}
+                    style={{ color: headlineColor }}
                   >
                     {step.title}
                   </h3>
-                  <p className="text-[16px] leading-[1.8]" style={{ color: '#574d3f', maxWidth: '560px' }}>
+                  <p className="text-[16px] leading-[1.8]" style={{ color: bodyColor, maxWidth: '560px' }}>
                     {step.description}
                   </p>
                 </div>

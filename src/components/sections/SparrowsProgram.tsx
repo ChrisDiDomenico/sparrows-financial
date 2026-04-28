@@ -9,7 +9,7 @@ export default function SparrowsProgram() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section style={{ background: '#36302a' }} className="py-36">
+    <section className="py-20">
       <div className="max-w-[1200px] mx-auto px-6" ref={ref}>
         <motion.p
           initial={{ opacity: 0, y: 20 }}

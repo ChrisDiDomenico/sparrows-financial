@@ -10,7 +10,7 @@ export default function FinalCTA() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section style={{ background: '#c4715a' }} className="py-36 text-center">
+    <section className="py-20 text-center">
       <div className="max-w-[800px] mx-auto px-6" ref={ref}>
         <motion.h2
           initial={{ opacity: 0, y: 32 }}
