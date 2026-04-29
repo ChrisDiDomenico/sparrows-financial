@@ -33,18 +33,16 @@ export default function Process({ dark }: { dark?: boolean }) {
   const headlineColor = dark ? '#ffffff' : '#36302a';
   const bodyColor = dark ? 'rgba(255,255,255,0.78)' : '#574d3f';
   const lineColor = dark ? 'rgba(255,255,255,0.15)' : '#ddd0bc';
-  const circleBg = dark ? 'transparent' : '#b9a591';
+  const circleBg = dark ? 'transparent' : 'transparent';
 
   return (
-    <section className="pb-20">
-      {!dark && <div style={{ borderTop: '1px solid #ddd0bc' }} />}
-      <div className="max-w-[1200px] mx-auto px-6 pt-16" ref={ref}>
+    <section style={{ padding: '80px 0' }}>
+      <div className="max-w-[1200px] mx-auto px-6" ref={ref}>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="uppercase tracking-[0.15em] text-[13px] font-medium mb-6"
-          style={{ color: '#b9a591' }}
+          style={{ color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase', letterSpacing: '0.15em', fontSize: '13px', fontWeight: 500, marginBottom: '24px' }}
         >
           The Sparrows Method
         </motion.p>
@@ -53,12 +51,13 @@ export default function Process({ dark }: { dark?: boolean }) {
           initial={{ opacity: 0, y: 28 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-          className="font-black leading-[1.05] mb-6"
+          className="font-black leading-[1.05]"
           style={{
             fontSize: 'clamp(40px, 5vw, 68px)',
             color: headlineColor,
             fontFamily: 'var(--font-inter)',
             maxWidth: '680px',
+            marginBottom: '24px',
           }}
         >
           Simple by design. Built around your life.
@@ -68,31 +67,45 @@ export default function Process({ dark }: { dark?: boolean }) {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.16 }}
-          className="text-[18px] leading-[1.8] mb-20"
-          style={{ color: bodyColor, maxWidth: '520px' }}
+          style={{ fontSize: '18px', lineHeight: 1.8, color: bodyColor, maxWidth: '520px', marginBottom: '64px' }}
         >
           Here&apos;s what to expect.
         </motion.p>
 
-        <div className="relative">
+        <div style={{ position: 'relative' }}>
           <div
-            className="absolute left-[19px] top-8 bottom-16 w-px hidden md:block"
-            style={{ background: lineColor }}
+            style={{
+              position: 'absolute',
+              left: '19px',
+              top: '32px',
+              bottom: '64px',
+              width: '1px',
+              background: lineColor,
+              display: 'none',
+            }}
+            className="md:block"
           />
 
-          <div className="flex flex-col gap-16">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '64px' }}>
             {steps.map((step, i) => (
               <motion.div
                 key={step.number}
                 initial={{ opacity: 0, x: -20 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.25 + i * 0.15, ease: [0.22, 1, 0.36, 1] }}
-                className="flex gap-8 md:gap-12"
+                style={{ display: 'flex', gap: '48px' }}
               >
-                <div className="flex-shrink-0">
+                <div style={{ flexShrink: 0 }}>
                   <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center text-[15px] font-semibold"
                     style={{
+                      width: '40px',
+                      height: '40px',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '15px',
+                      fontWeight: 600,
                       border: '2px solid #c4715a',
                       color: '#c4715a',
                       background: circleBg,
@@ -101,14 +114,11 @@ export default function Process({ dark }: { dark?: boolean }) {
                     {step.number}
                   </div>
                 </div>
-                <div className="pb-2">
-                  <h3
-                    className="font-semibold text-[22px] mb-3"
-                    style={{ color: headlineColor }}
-                  >
+                <div>
+                  <h3 style={{ fontWeight: 600, fontSize: '22px', color: headlineColor, marginBottom: '12px' }}>
                     {step.title}
                   </h3>
-                  <p className="text-[16px] leading-[1.8]" style={{ color: bodyColor, maxWidth: '560px' }}>
+                  <p style={{ fontSize: '16px', lineHeight: 1.8, color: bodyColor, maxWidth: '560px' }}>
                     {step.description}
                   </p>
                 </div>
@@ -121,12 +131,20 @@ export default function Process({ dark }: { dark?: boolean }) {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="mt-16"
+          style={{ marginTop: '64px' }}
         >
           <Link
             href={SCHEDULE_URL}
-            className="inline-block px-9 py-4 rounded-full text-[15px] font-semibold text-white transition-all hover:opacity-90 active:scale-95"
-            style={{ background: '#c4715a' }}
+            style={{
+              display: 'inline-block',
+              padding: '16px 36px',
+              borderRadius: '9999px',
+              fontSize: '15px',
+              fontWeight: 600,
+              color: '#ffffff',
+              background: '#c4715a',
+              textDecoration: 'none',
+            }}
           >
             Schedule a Call
           </Link>

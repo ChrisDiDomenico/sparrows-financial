@@ -18,18 +18,18 @@ export default function FAQ({ dark }: { dark?: boolean }) {
   const answerColor = dark ? 'rgba(255,255,255,0.88)' : '#574d3f';
 
   return (
-    <section className="pb-20">
-      {!dark && <div style={{ borderTop: '1px solid #ddd0bc' }} />}
-      <div className="max-w-[1200px] mx-auto px-6 pt-16" ref={ref}>
+    <section style={{ padding: '80px 0' }}>
+      <div className="max-w-[1200px] mx-auto px-6" ref={ref}>
         <motion.h2
           initial={{ opacity: 0, y: 28 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="font-black leading-[1.05] mb-16"
+          className="font-black leading-[1.05]"
           style={{
             fontSize: 'clamp(36px, 4.5vw, 60px)',
             color: headlineColor,
             fontFamily: 'var(--font-inter)',
+            marginBottom: '56px',
           }}
         >
           Here&apos;s what people are asking.
@@ -40,22 +40,37 @@ export default function FAQ({ dark }: { dark?: boolean }) {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="flex flex-wrap gap-0 mb-16"
-          style={{ borderBottom: `1px solid ${tabBorderColor}` }}
+          style={{ display: 'flex', flexWrap: 'wrap', borderBottom: `1px solid ${tabBorderColor}`, marginBottom: '48px' }}
         >
           {FAQ_TABS.map((tab, i) => (
             <button
               key={i}
               onClick={() => setActive(i)}
-              className="relative px-0 pb-4 mr-8 text-[15px] font-medium transition-colors"
-              style={{ color: active === i ? activeTabColor : inactiveTabColor }}
+              style={{
+                position: 'relative',
+                paddingBottom: '16px',
+                marginRight: '32px',
+                fontSize: '15px',
+                fontWeight: 500,
+                color: active === i ? activeTabColor : inactiveTabColor,
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'color 0.2s',
+              }}
             >
               {tab.label}
               {active === i && (
                 <motion.div
                   layoutId="faq-underline"
-                  className="absolute bottom-0 left-0 right-0 h-[2px]"
-                  style={{ background: underlineColor }}
+                  style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    height: '2px',
+                    background: underlineColor,
+                  }}
                 />
               )}
             </button>
@@ -71,8 +86,7 @@ export default function FAQ({ dark }: { dark?: boolean }) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="text-[17px] leading-[1.9]"
-              style={{ color: answerColor }}
+              style={{ fontSize: '17px', lineHeight: 1.9, color: answerColor }}
             >
               {FAQ_TABS[active].answer}
             </motion.p>

@@ -9,9 +9,8 @@ export default function Philosophy() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section className="pb-40">
-      <div style={{ borderTop: '1px solid #ddd0bc' }} />
-      <div className="max-w-[1200px] mx-auto px-6 pt-24" ref={ref}>
+    <section style={{ padding: '80px 0' }}>
+      <div className="max-w-[1200px] mx-auto px-6" ref={ref}>
         <div className="flex flex-col md:flex-row md:gap-16 gap-12">
           {/* Left */}
           <motion.div
@@ -39,23 +38,23 @@ export default function Philosophy() {
             transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="md:w-[55%] flex flex-col gap-6"
           >
-            <p className="text-[17px] leading-[1.9]" style={{ color: '#574d3f' }}>
+            <p style={{ fontSize: '17px', lineHeight: 1.9, color: '#574d3f' }}>
               Our process starts with your life and is guided by your values — so we can craft a
               plan that&apos;s truly yours.
             </p>
-            <p className="text-[17px] leading-[1.9]" style={{ color: '#574d3f' }}>
+            <p style={{ fontSize: '17px', lineHeight: 1.9, color: '#574d3f' }}>
               Most advisors focus on your portfolio. We start with your life — your goals, your
               values, your timeline. The numbers follow the story, not the other way around.
             </p>
-            <p className="text-[17px] leading-[1.9]" style={{ color: '#574d3f' }}>
+            <p style={{ fontSize: '17px', lineHeight: 1.9, color: '#574d3f' }}>
               [PLACEHOLDER — personal philosophy paragraph about the conviction behind our approach
               and what makes Sparrows Financial different from a traditional advisory firm.]
             </p>
-            <div className="mt-2">
+            <div style={{ marginTop: '8px' }}>
               <Link
                 href="/process"
-                className="text-[15px] font-medium hover:opacity-70 transition-opacity"
-                style={{ color: '#c4715a' }}
+                style={{ fontSize: '15px', fontWeight: 500, color: '#c4715a' }}
+                className="hover:opacity-70 transition-opacity"
               >
                 See how we work →
               </Link>
