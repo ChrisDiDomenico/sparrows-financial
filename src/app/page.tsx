@@ -3,7 +3,6 @@ import Footer from '@/components/layout/Footer';
 import Hero from '@/components/sections/Hero';
 import Philosophy from '@/components/sections/Philosophy';
 import EmotionalStatement from '@/components/sections/EmotionalStatement';
-import Process from '@/components/sections/Process';
 import MeetChris from '@/components/sections/MeetChris';
 import FAQ from '@/components/sections/FAQ';
 import YouTube from '@/components/sections/YouTube';
@@ -34,12 +33,7 @@ export default function HomePage() {
             <EmotionalStatement dark />
           </div>
 
-          {/* 3 — Process: dark brown */}
-          <div style={{ ...block, background: '#36302a' }}>
-            <Process dark />
-          </div>
-
-          {/* 4 — Meet Chris: slate blue */}
+{/* 4 — Meet Chris: slate blue */}
           <div style={{ ...block, background: '#6b8fa3' }}>
             <MeetChris dark />
           </div>
