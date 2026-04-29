@@ -16,20 +16,27 @@ const SparrowSVG = () => (
 
 const credentials = ['CFP® Candidate', 'Fee-Only', 'Fiduciary', 'XY Planning Network'];
 
-export default function MeetChris() {
+export default function MeetChris({ dark }: { dark?: boolean }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
+  const headlineColor = dark ? '#ffffff' : '#36302a';
+  const bodyColor = dark ? 'rgba(255,255,255,0.85)' : '#574d3f';
+  const eyebrowColor = dark ? 'rgba(255,255,255,0.6)' : '#b9a591';
+  const pillBorder = dark ? 'rgba(255,255,255,0.7)' : '#c4715a';
+  const pillColor = dark ? '#ffffff' : '#c4715a';
+  const linkColor = dark ? '#ffffff' : '#c4715a';
+
   return (
-    <section className="pb-40">
-      <div style={{ borderTop: '1px solid #ddd0bc' }} />
-      <div className="max-w-[1200px] mx-auto px-6 pt-24" ref={ref}>
+    <section className="pb-20">
+      {!dark && <div style={{ borderTop: '1px solid #ddd0bc' }} />}
+      <div className="max-w-[1200px] mx-auto px-6 pt-16" ref={ref}>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="uppercase tracking-[0.15em] text-[13px] font-medium mb-6"
-          style={{ color: '#b9a591' }}
+          style={{ color: eyebrowColor }}
         >
           Get to know your advisor 🤝
         </motion.p>
@@ -41,7 +48,7 @@ export default function MeetChris() {
           className="font-black leading-[1.0] mb-4"
           style={{
             fontSize: 'clamp(52px, 6vw, 80px)',
-            color: '#36302a',
+            color: headlineColor,
             fontFamily: 'var(--font-inter)',
           }}
         >
@@ -53,7 +60,7 @@ export default function MeetChris() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.16 }}
           className="text-[18px] italic mb-16"
-          style={{ color: '#574d3f' }}
+          style={{ color: dark ? 'rgba(255,255,255,0.8)' : '#574d3f' }}
         >
           Your friendly neighborhood financial advisor.
         </motion.p>
@@ -66,13 +73,13 @@ export default function MeetChris() {
             transition={{ duration: 0.7, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
             className="md:w-[52%]"
           >
-            <p className="text-[17px] leading-[1.9] mb-6" style={{ color: '#574d3f' }}>
+            <p className="text-[17px] leading-[1.9] mb-6" style={{ color: bodyColor }}>
               I started Sparrows Financial because I believe financial advice should feel like a
               conversation — not a sales pitch. Too many people leave their advisor&apos;s office
               more confused than when they arrived. That&apos;s not financial planning. That&apos;s a
               problem.
             </p>
-            <p className="text-[17px] leading-[1.9] mb-10" style={{ color: '#574d3f' }}>
+            <p className="text-[17px] leading-[1.9] mb-10" style={{ color: bodyColor }}>
               [PLACEHOLDER — Chris&apos;s personal story, background, what drives him, and why he
               chose this work. Something warm, honest, and human that makes you feel like you already
               know him.]
@@ -84,8 +91,8 @@ export default function MeetChris() {
                   key={c}
                   className="px-4 py-1.5 rounded-full text-[14px] font-medium"
                   style={{
-                    border: '1px solid #c4715a',
-                    color: '#c4715a',
+                    border: `1px solid ${pillBorder}`,
+                    color: pillColor,
                   }}
                 >
                   {c}
@@ -96,7 +103,7 @@ export default function MeetChris() {
             <Link
               href="/about"
               className="text-[15px] font-medium hover:opacity-70 transition-opacity"
-              style={{ color: '#c4715a' }}
+              style={{ color: linkColor }}
             >
               Read my full story →
             </Link>

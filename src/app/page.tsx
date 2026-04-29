@@ -21,34 +21,42 @@ export default function HomePage() {
           className="flex flex-col px-6 pb-24"
           style={{ gap: '48px', paddingTop: '48px', background: '#b9a591' }}
         >
+          {/* 1 — Philosophy: bone */}
           <div className="rounded-3xl overflow-hidden" style={{ background: '#ede4da' }}>
             <Philosophy />
           </div>
 
+          {/* 2 — Emotional Statement: sage green */}
           <div className="rounded-3xl overflow-hidden" style={{ background: '#7e9e6b' }}>
             <EmotionalStatement dark />
           </div>
 
+          {/* 3 — Process: dark brown */}
           <div className="rounded-3xl overflow-hidden" style={{ background: '#36302a' }}>
             <Process dark />
           </div>
 
-          <div className="rounded-3xl overflow-hidden" style={{ background: '#ede4da' }}>
-            <MeetChris />
+          {/* 4 — Meet Chris: slate blue */}
+          <div className="rounded-3xl overflow-hidden" style={{ background: '#6b8fa3' }}>
+            <MeetChris dark />
           </div>
 
-          <div className="rounded-3xl overflow-hidden" style={{ background: '#f7f3ec' }}>
-            <FAQ />
+          {/* 5 — FAQ: purple */}
+          <div className="rounded-3xl overflow-hidden" style={{ background: '#8b7aaa' }}>
+            <FAQ dark />
           </div>
 
+          {/* 6 — YouTube: umber */}
           <div className="rounded-3xl overflow-hidden" style={{ background: '#574d3f' }}>
             <YouTube dark />
           </div>
 
+          {/* 7 — Sparrows Program: forest green */}
           <div className="rounded-3xl overflow-hidden" style={{ background: '#4a6741' }}>
             <SparrowsProgram />
           </div>
 
+          {/* 8 — Final CTA: terracotta */}
           <div className="rounded-3xl overflow-hidden" style={{ background: '#c4715a' }}>
             <FinalCTA />
           </div>
