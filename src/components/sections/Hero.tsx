@@ -53,7 +53,7 @@ export default function Hero() {
               style={{
                 fontSize: '80px',
                 color: '#36302a',
-                fontFamily: 'var(--font-inter)',
+                fontFamily: "'Neucha', cursive",
               }}
             >
               Hey, I&apos;m Chris. 👋
@@ -61,7 +61,7 @@ export default function Hero() {
             <p
               className="mb-6"
               style={{
-                fontFamily: 'var(--font-inter)',
+                fontFamily: "'Neucha', cursive",
                 fontWeight: 700,
                 fontSize: '32px',
                 lineHeight: 1.4,
