@@ -2,6 +2,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Hero from '@/components/sections/Hero';
 import Philosophy from '@/components/sections/Philosophy';
+import ClientJourney from '@/components/sections/ClientJourney';
 import MeetChris from '@/components/sections/MeetChris';
 import FAQ from '@/components/sections/FAQ';
 import YouTube from '@/components/sections/YouTube';
@@ -27,7 +28,12 @@ export default function HomePage() {
             <Philosophy />
           </div>
 
-          {/* 2 — Iceberg placeholder */}
+          {/* 2 — Client journey diagram: bone */}
+          <div style={{ ...block, background: '#ede4da' }}>
+            <ClientJourney />
+          </div>
+
+          {/* 3 — Iceberg placeholder */}
           <div style={{ ...block, background: '#b9a591' }}>
             <div style={{ padding: '80px 24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <div style={{
@@ -45,7 +51,25 @@ export default function HomePage() {
             </div>
           </div>
 
-{/* 4 — Meet Chris: slate blue */}
+          {/* 4 — Client journey circle placeholder */}
+          <div style={{ ...block, background: '#b9a591' }}>
+            <div style={{ padding: '80px 24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{
+                border: '2px dashed #8a7a6a',
+                borderRadius: '16px',
+                padding: '60px 80px',
+                textAlign: 'center',
+                color: '#8a7a6a',
+                fontSize: '16px',
+                fontWeight: 500,
+                letterSpacing: '0.02em',
+              }}>
+                [ Client journey circle coming soon ]
+              </div>
+            </div>
+          </div>
+
+          {/* 5 — Meet Chris: slate blue */}
           <div style={{ ...block, background: '#6b8fa3' }}>
             <MeetChris dark />
           </div>
