@@ -28,12 +28,7 @@ export default function HomePage() {
             <Philosophy />
           </div>
 
-          {/* 2 — Client journey diagram: bone */}
-          <div style={{ ...block, background: '#ede4da' }}>
-            <ClientJourney />
-          </div>
-
-          {/* 3 — Iceberg placeholder */}
+          {/* 2 — Iceberg placeholder */}
           <div style={{ ...block, background: '#b9a591' }}>
             <div style={{ padding: '80px 24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <div style={{
@@ -51,22 +46,9 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* 4 — Client journey circle placeholder */}
-          <div style={{ ...block, background: '#b9a591' }}>
-            <div style={{ padding: '80px 24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <div style={{
-                border: '2px dashed #8a7a6a',
-                borderRadius: '16px',
-                padding: '60px 80px',
-                textAlign: 'center',
-                color: '#8a7a6a',
-                fontSize: '16px',
-                fontWeight: 500,
-                letterSpacing: '0.02em',
-              }}>
-                [ Client journey circle coming soon ]
-              </div>
-            </div>
+          {/* 3 — Client journey diagram: bone */}
+          <div style={{ ...block, background: '#ede4da' }}>
+            <ClientJourney />
           </div>
 
           {/* 5 — Meet Chris: slate blue */}
