@@ -2,7 +2,6 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Hero from '@/components/sections/Hero';
 import Philosophy from '@/components/sections/Philosophy';
-import EmotionalStatement from '@/components/sections/EmotionalStatement';
 import MeetChris from '@/components/sections/MeetChris';
 import FAQ from '@/components/sections/FAQ';
 import YouTube from '@/components/sections/YouTube';
@@ -28,9 +27,22 @@ export default function HomePage() {
             <Philosophy />
           </div>
 
-          {/* 2 — Emotional Statement: sage green */}
-          <div style={{ ...block, background: '#7e9e6b' }}>
-            <EmotionalStatement dark />
+          {/* 2 — Iceberg placeholder */}
+          <div style={{ ...block, background: '#b9a591' }}>
+            <div style={{ padding: '80px 24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{
+                border: '2px dashed #8a7a6a',
+                borderRadius: '16px',
+                padding: '60px 80px',
+                textAlign: 'center',
+                color: '#8a7a6a',
+                fontSize: '16px',
+                fontWeight: 500,
+                letterSpacing: '0.02em',
+              }}>
+                [ Iceberg image coming soon ]
+              </div>
+            </div>
           </div>
 
 {/* 4 — Meet Chris: slate blue */}
