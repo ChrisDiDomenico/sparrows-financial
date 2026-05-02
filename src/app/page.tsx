@@ -1,5 +1,6 @@
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import Image from 'next/image';
 import Hero from '@/components/sections/Hero';
 import Philosophy from '@/components/sections/Philosophy';
 import ClientJourney from '@/components/sections/ClientJourney';
@@ -28,21 +29,16 @@ export default function HomePage() {
             <Philosophy />
           </div>
 
-          {/* 2 — Iceberg placeholder */}
+          {/* 2 — Iceberg image */}
           <div style={{ ...block, background: '#b9a591' }}>
-            <div style={{ padding: '80px 24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <div style={{
-                border: '2px dashed #8a7a6a',
-                borderRadius: '16px',
-                padding: '60px 80px',
-                textAlign: 'center',
-                color: '#8a7a6a',
-                fontSize: '16px',
-                fontWeight: 500,
-                letterSpacing: '0.02em',
-              }}>
-                [ Iceberg image coming soon ]
-              </div>
+            <div style={{ padding: '80px 24px', display: 'flex', justifyContent: 'center' }}>
+              <Image
+                src="/iceberg.png"
+                alt="What people think financial planning is vs. what it actually is"
+                width={800}
+                height={600}
+                style={{ width: '100%', maxWidth: '800px', height: 'auto' }}
+              />
             </div>
           </div>
 
