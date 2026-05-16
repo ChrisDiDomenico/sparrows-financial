@@ -3,7 +3,9 @@
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { SCHEDULE_URL, YOUTUBE_URL } from '@/lib/constants';
+import { SCHEDULE_URL } from '@/lib/constants';
+
+const YOUTUBE_URL = 'https://www.youtube.com/@Chris_DiDomenico';
 
 const SparrowIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,51 +26,33 @@ const ResourcesMenu = () => (
     }}
     className="absolute top-full left-1/2 -translate-x-1/2 w-[480px] py-10 px-10 rounded-b-2xl z-50"
   >
-    <div className="grid grid-cols-2 gap-8">
-      <div>
-        <p className="uppercase tracking-[0.15em] text-[11px] font-medium mb-5" style={{ color: '#b9a591' }}>
-          Learn
-        </p>
-        <div className="flex flex-col gap-3">
-          <Link href="/blog" className="text-[17px] font-medium hover:text-[#c4715a] transition-colors" style={{ color: '#36302a' }}>
-            Blog
-          </Link>
-          <Link href="/faq" className="text-[17px] font-medium hover:text-[#c4715a] transition-colors" style={{ color: '#36302a' }}>
-            FAQ
-          </Link>
-          <Link href="/who-we-serve" className="text-[17px] font-medium hover:text-[#c4715a] transition-colors" style={{ color: '#36302a' }}>
-            Who We Serve
-          </Link>
+    <div className="grid grid-cols-2 gap-6">
+      <div className="rounded-xl p-6 flex flex-col justify-between" style={{ background: '#c4715a' }}>
+        <div>
+          <p className="text-white font-semibold text-[18px] leading-snug mb-2">Watch on YouTube</p>
+          <p className="text-[13px] leading-relaxed mb-5 text-white/80">
+            Weekly financial planning videos, free.
+          </p>
         </div>
+        <a
+          href={YOUTUBE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white font-medium text-[14px] hover:opacity-80 transition-opacity"
+        >
+          Watch Now →
+        </a>
       </div>
-      <div className="flex flex-col gap-4">
-        <div className="rounded-xl p-6 flex flex-col justify-between" style={{ background: '#c4715a' }}>
-          <div>
-            <p className="text-white font-semibold text-[18px] leading-snug mb-2">Schedule a Free Call</p>
-            <p className="text-[13px] leading-relaxed mb-5 text-white/80">
-              Start with a no-obligation 30-minute conversation.
-            </p>
-          </div>
-          <Link href="#" className="text-white font-medium text-[14px] hover:opacity-80 transition-opacity">
-            Book Now →
-          </Link>
+      <div className="rounded-xl p-6 flex flex-col justify-between" style={{ background: '#36302a' }}>
+        <div>
+          <p className="text-white font-semibold text-[18px] leading-snug mb-2">Schedule a Free Call</p>
+          <p className="text-[13px] leading-relaxed mb-5 text-white/80">
+            Start with a no-obligation 30-minute conversation.
+          </p>
         </div>
-        <div className="rounded-xl p-6 flex flex-col justify-between" style={{ background: '#c4715a' }}>
-          <div>
-            <p className="text-white font-semibold text-[18px] leading-snug mb-2">Watch on YouTube</p>
-            <p className="text-[13px] leading-relaxed mb-5 text-white/80">
-              Weekly financial planning videos, free.
-            </p>
-          </div>
-          <a
-            href={YOUTUBE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white font-medium text-[14px] hover:opacity-80 transition-opacity"
-          >
-            Watch Now →
-          </a>
-        </div>
+        <Link href="#" className="text-white font-medium text-[14px] hover:opacity-80 transition-opacity">
+          Book Now →
+        </Link>
       </div>
     </div>
   </div>
@@ -86,9 +70,9 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const openMenu = (menu: 'resources') => {
+  const openMenu = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
-    setActiveMenu(menu);
+    setActiveMenu('resources');
   };
 
   const scheduleClose = () => {
@@ -120,7 +104,7 @@ export default function Navbar() {
           {/* Resources dropdown */}
           <div
             className="relative"
-            onMouseEnter={() => openMenu('resources')}
+            onMouseEnter={openMenu}
             onMouseLeave={scheduleClose}
           >
             <button
@@ -140,7 +124,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.18 }}
-                  onMouseEnter={() => openMenu('resources')}
+                  onMouseEnter={openMenu}
                   onMouseLeave={scheduleClose}
                 >
                   <ResourcesMenu />
@@ -199,11 +183,6 @@ export default function Navbar() {
             className="fixed inset-0 z-30 flex flex-col pt-20 px-8 pb-12 overflow-y-auto"
             style={{ background: '#b9a591' }}
           >
-            <nav className="flex flex-col gap-6 text-[28px] font-bold" style={{ color: '#36302a' }}>
-              <Link href="/blog" onClick={() => setMobileOpen(false)}>Blog</Link>
-              <Link href="/faq" onClick={() => setMobileOpen(false)}>FAQ</Link>
-              <Link href="/who-we-serve" onClick={() => setMobileOpen(false)}>Who We Serve</Link>
-            </nav>
             <div className="mt-auto pt-10">
               <Link
                 href={SCHEDULE_URL}
