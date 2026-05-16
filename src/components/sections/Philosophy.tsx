@@ -63,14 +63,26 @@ export default function Philosophy() {
             style={{ display: 'block', minWidth: '320px' }}
             aria-hidden="true"
           >
+            <defs>
+              <filter id="sketchy" x="-5%" y="-5%" width="110%" height="110%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" seed="2" result="noise"/>
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+              </filter>
+              <filter id="sketchy-circle" x="-5%" y="-5%" width="110%" height="110%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" seed="2" result="noise"/>
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+              </filter>
+            </defs>
+
             {/* Dashed winding path — drawn first so circles sit on top */}
             <motion.path
               d={pathD}
               fill="none"
-              stroke="#ddd0bc"
+              stroke="#36302a"
               strokeWidth="2.5"
-              strokeDasharray="8 6"
+              strokeDasharray="10 6"
               strokeLinecap="round"
+              filter="url(#sketchy)"
               initial={{ pathLength: 0, opacity: 0 }}
               animate={inView ? { pathLength: 1, opacity: 1 } : {}}
               transition={{ duration: 1.8, delay: 0.4, ease: 'easeInOut' }}
@@ -88,7 +100,7 @@ export default function Philosophy() {
                   style={{ transformOrigin: `${m.x}px ${m.y}px` }}
                 >
                   {/* Outer ring */}
-                  <circle cx={m.x} cy={m.y} r={22} fill="#ede4da" stroke="#ddd0bc" strokeWidth="1.5" />
+                  <circle cx={m.x} cy={m.y} r={22} fill="#ede4da" stroke="#36302a" strokeWidth="1.5" filter="url(#sketchy-circle)" />
                   {/* Inner filled circle */}
                   <circle cx={m.x} cy={m.y} r={10} fill="#c4715a" />
                   {/* Step number */}
