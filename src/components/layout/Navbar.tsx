@@ -41,8 +41,19 @@ const ResourcesMenu = () => (
           </Link>
         </div>
       </div>
-      <div>
-        <div className="rounded-xl p-6 h-full flex flex-col justify-between" style={{ background: '#c4715a' }}>
+      <div className="flex flex-col gap-4">
+        <div className="rounded-xl p-6 flex flex-col justify-between" style={{ background: '#c4715a' }}>
+          <div>
+            <p className="text-white font-semibold text-[18px] leading-snug mb-2">Schedule a Free Call</p>
+            <p className="text-[13px] leading-relaxed mb-5 text-white/80">
+              Start with a no-obligation 30-minute conversation.
+            </p>
+          </div>
+          <Link href="#" className="text-white font-medium text-[14px] hover:opacity-80 transition-opacity">
+            Book Now →
+          </Link>
+        </div>
+        <div className="rounded-xl p-6 flex flex-col justify-between" style={{ background: '#c4715a' }}>
           <div>
             <p className="text-white font-semibold text-[18px] leading-snug mb-2">Watch on YouTube</p>
             <p className="text-[13px] leading-relaxed mb-5 text-white/80">
