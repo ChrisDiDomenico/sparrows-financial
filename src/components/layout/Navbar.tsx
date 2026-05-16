@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { SCHEDULE_URL } from '@/lib/constants';
 
 const YOUTUBE_URL = 'https://www.youtube.com/@Chris_DiDomenico';
 
@@ -132,14 +131,6 @@ export default function Navbar() {
               )}
             </AnimatePresence>
           </div>
-
-          <Link
-            href={SCHEDULE_URL}
-            className="px-6 py-3 rounded-full text-[15px] font-semibold text-white transition-all hover:opacity-90 active:scale-95"
-            style={{ background: '#c4715a' }}
-          >
-            See if you&apos;re a fit
-          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -183,16 +174,6 @@ export default function Navbar() {
             className="fixed inset-0 z-30 flex flex-col pt-20 px-8 pb-12 overflow-y-auto"
             style={{ background: '#b9a591' }}
           >
-            <div className="mt-auto pt-10">
-              <Link
-                href={SCHEDULE_URL}
-                onClick={() => setMobileOpen(false)}
-                className="block text-center px-8 py-4 rounded-full text-[16px] font-semibold text-white"
-                style={{ background: '#c4715a' }}
-              >
-                See if you&apos;re a fit
-              </Link>
-            </div>
           </motion.div>
         )}
       </AnimatePresence>
