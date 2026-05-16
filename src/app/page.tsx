@@ -2,6 +2,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Image from 'next/image';
 import Hero from '@/components/sections/Hero';
+import WhatIBelieve from '@/components/sections/WhatIBelieve';
 import Philosophy from '@/components/sections/Philosophy';
 import ClientJourney from '@/components/sections/ClientJourney';
 import MeetChris from '@/components/sections/MeetChris';
@@ -23,6 +24,11 @@ export default function HomePage() {
         <Hero />
 
         <div style={{ background: '#b9a591', display: 'flex', flexDirection: 'column', gap: '48px', padding: '48px 24px 96px' }}>
+
+          {/* WhatIBelieve placeholder */}
+          <div style={{ ...block, background: '#b9a591' }}>
+            <WhatIBelieve />
+          </div>
 
           {/* 1 — Philosophy: bone */}
           <div style={{ ...block, background: '#ede4da' }}>
