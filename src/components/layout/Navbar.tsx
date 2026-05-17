@@ -1,10 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
-const YOUTUBE_URL = 'https://www.youtube.com/@Chris_DiDomenico';
 
 const SparrowIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,67 +14,15 @@ const SparrowIcon = () => (
   </svg>
 );
 
-const ResourcesMenu = () => (
-  <div
-    style={{
-      background: '#faf6f0',
-      borderTop: '1px solid #ddd0bc',
-      boxShadow: '0 24px 60px rgba(54,48,42,0.10)',
-    }}
-    className="absolute top-full left-1/2 -translate-x-1/2 w-[480px] py-10 px-10 rounded-b-2xl z-50"
-  >
-    <div className="grid grid-cols-2 gap-6">
-      <div className="rounded-xl p-6 flex flex-col justify-between" style={{ background: '#c4715a' }}>
-        <div>
-          <p className="text-white font-semibold text-[18px] leading-snug mb-2">Watch on YouTube</p>
-          <p className="text-[13px] leading-relaxed mb-5 text-white/80">
-            Weekly financial planning videos, free.
-          </p>
-        </div>
-        <a
-          href={YOUTUBE_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white font-medium text-[14px] hover:opacity-80 transition-opacity"
-        >
-          Watch Now →
-        </a>
-      </div>
-      <div className="rounded-xl p-6 flex flex-col justify-between" style={{ background: '#36302a' }}>
-        <div>
-          <p className="text-white font-semibold text-[18px] leading-snug mb-2">Schedule a Free Call</p>
-          <p className="text-[13px] leading-relaxed mb-5 text-white/80">
-            Start with a no-obligation 30-minute conversation.
-          </p>
-        </div>
-        <Link href="#" className="text-white font-medium text-[14px] hover:opacity-80 transition-opacity">
-          Book Now →
-        </Link>
-      </div>
-    </div>
-  </div>
-);
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [activeMenu, setActiveMenu] = useState<'resources' | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-
-  const openMenu = () => {
-    if (closeTimer.current) clearTimeout(closeTimer.current);
-    setActiveMenu('resources');
-  };
-
-  const scheduleClose = () => {
-    closeTimer.current = setTimeout(() => setActiveMenu(null), 120);
-  };
 
   return (
     <header
@@ -97,41 +43,6 @@ export default function Navbar() {
             Sparrows Financial
           </span>
         </Link>
-
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {/* Resources dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={openMenu}
-            onMouseLeave={scheduleClose}
-          >
-            <button
-              className="flex items-center gap-1 text-[15px] font-medium transition-colors hover:text-[#c4715a]"
-              style={{ color: '#36302a' }}
-              onClick={() => setActiveMenu(activeMenu === 'resources' ? null : 'resources')}
-            >
-              Resources
-              <svg className="w-3.5 h-3.5 mt-0.5 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <AnimatePresence>
-              {activeMenu === 'resources' && (
-                <motion.div
-                  initial={{ opacity: 0, y: -8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.18 }}
-                  onMouseEnter={openMenu}
-                  onMouseLeave={scheduleClose}
-                >
-                  <ResourcesMenu />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        </div>
 
         {/* Mobile hamburger */}
         <button

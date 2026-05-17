@@ -106,6 +106,42 @@ export default function Hero() {
               Watch My Videos →
             </a>
           </FadeUp>
+
+          <FadeUp delay={0.58} className="mt-8 flex flex-col md:flex-row gap-4">
+            <div
+              className="rounded-xl flex flex-col justify-between"
+              style={{ background: '#c4715a', padding: '24px', maxWidth: '240px', flex: '1 1 0' }}
+            >
+              <div>
+                <p className="text-white font-bold text-[16px] leading-snug mb-2">Watch on YouTube</p>
+                <p className="text-[13px] leading-relaxed mb-5 text-white/80">
+                  Weekly financial planning videos, free.
+                </p>
+              </div>
+              <a
+                href={YOUTUBE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white font-medium text-[14px] hover:opacity-80 transition-opacity"
+              >
+                Watch Now →
+              </a>
+            </div>
+            <div
+              className="rounded-xl flex flex-col justify-between"
+              style={{ background: '#36302a', padding: '24px', maxWidth: '240px', flex: '1 1 0' }}
+            >
+              <div>
+                <p className="text-white font-bold text-[16px] leading-snug mb-2">Schedule a Free Call</p>
+                <p className="text-[13px] leading-relaxed mb-5 text-white/80">
+                  Start with a no-obligation 30-minute conversation.
+                </p>
+              </div>
+              <a href="#" className="text-white font-medium text-[14px] hover:opacity-80 transition-opacity">
+                Book Now →
+              </a>
+            </div>
+          </FadeUp>
         </div>
 
         {/* Right photo placeholder */}
